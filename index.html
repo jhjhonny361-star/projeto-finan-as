@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Financeiro AvanÁado</title>
-    <!-- Chart.js para os Gr·ficos -->
+    <title>Dashboard Financeiro Avan√ßado</title>
+    <!-- Chart.js para os Gr√°ficos -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Supabase CDN JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -102,7 +102,7 @@
             margin-top: 5px;
         }
 
-        /* --- ¡REA PRINCIPAL --- */
+        /* --- √ÅREA PRINCIPAL --- */
         main {
             flex: 1;
             padding: 30px;
@@ -149,14 +149,14 @@
         .kpi-card.entrada .value { color: var(--verde-esmeralda); }
         .kpi-card.saida .value { color: var(--vermelho-saida); }
 
-        /* Gr·ficos e Formul·rio */
+        /* Gr√°ficos e Formul√°rio */
         .dashboard-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 20px;
         }
 
-        /* Formul·rios */
+        /* Formul√°rios */
         form {
             display: flex;
             flex-direction: column;
@@ -201,7 +201,7 @@
             box-shadow: 0 0 15px var(--roxo-glow);
         }
 
-        /* Tabela de TransaÁıes */
+        /* Tabela de Transa√ß√µes */
         .table-container {
             margin-top: 10px;
             max-height: 300px;
@@ -224,7 +224,7 @@
         .type-entrada { color: var(--verde-esmeralda); font-weight: 500; }
         .type-saida { color: var(--vermelho-saida); font-weight: 500; }
 
-        /* AnimaÁ„o Fade-in */
+        /* Anima√ß√£o Fade-in */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -246,11 +246,11 @@
 
     <!-- SIDEBAR -->
     <aside>
-        <div class="logo">FinanÁas BI</div>
+        <div class="logo">Finan√ßas BI</div>
         
         <div class="menu-section">
             <h3>Painel</h3>
-            <button class="btn-menu active" onclick="changeView('geral', this)">Vis„o Geral</button>
+            <button class="btn-menu active" onclick="changeView('geral', this)">Vis√£o Geral</button>
         </div>
 
         <div class="menu-section">
@@ -258,7 +258,7 @@
             <div class="sub-menu">
                 <button class="btn-menu" onclick="changeView('01', this)">Janeiro</button>
                 <button class="btn-menu" onclick="changeView('02', this)">Fevereiro</button>
-                <button class="btn-menu" onclick="changeView('03', this)">MarÁo</button>
+                <button class="btn-menu" onclick="changeView('03', this)">Mar√ßo</button>
                 <button class="btn-menu" onclick="changeView('04', this)">Abril</button>
                 <button class="btn-menu" onclick="changeView('05', this)">Maio</button>
                 <button class="btn-menu" onclick="changeView('06', this)">Junho</button>
@@ -283,16 +283,16 @@
         </div>
     </aside>
 
-    <!-- CONTE⁄DO PRINCIPAL -->
+    <!-- CONTE√öDO PRINCIPAL -->
     <main>
         <div class="header-main">
-            <h1 id="dashboard-title">Vis„o Geral</h1>
+            <h1 id="dashboard-title">Vis√£o Geral</h1>
         </div>
 
         <!-- KPIS -->
         <div class="kpi-container">
             <div class="card-glass kpi-card">
-                <h4>BalanÁo Total</h4>
+                <h4>Balan√ßo Total</h4>
                 <div class="value" id="kpi-total">R$ 0,00</div>
             </div>
             <div class="card-glass kpi-card entrada">
@@ -300,23 +300,23 @@
                 <div class="value" id="kpi-entradas">R$ 0,00</div>
             </div>
             <div class="card-glass kpi-card saida">
-                <h4>SaÌdas</h4>
+                <h4>Sa√≠das</h4>
                 <div class="value" id="kpi-saidas">R$ 0,00</div>
             </div>
         </div>
 
-        <!-- GR¡FICOS E FORMUL¡RIO -->
+        <!-- GR√ÅFICOS E FORMUL√ÅRIO -->
         <div class="dashboard-grid">
             <div class="card-glass" style="min-height: 300px;">
                 <canvas id="chartFinancas"></canvas>
             </div>
 
             <div class="card-glass">
-                <h3>Nova TransaÁ„o</h3>
+                <h3>Nova Transa√ß√£o</h3>
                 <form id="transaction-form" onsubmit="handleFormSubmit(event)">
                     <div class="form-group">
-                        <label>DescriÁ„o</label>
-                        <input type="text" id="desc" required placeholder="Ex: Aluguel, Sal·rio">
+                        <label>Descri√ß√£o</label>
+                        <input type="text" id="desc" required placeholder="Ex: Aluguel, Sal√°rio">
                     </div>
                     <div class="form-group">
                         <label>Valor (R$)</label>
@@ -326,7 +326,7 @@
                         <label>Tipo</label>
                         <select id="type" required>
                             <option value="entrada">Entrada</option>
-                            <option value="saida">SaÌda</option>
+                            <option value="saida">Sa√≠da</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -339,19 +339,19 @@
                         <label>Data</label>
                         <input type="date" id="date" required>
                     </div>
-                    <button type="submit" class="btn-submit">Salvar TransaÁ„o</button>
+                    <button type="submit" class="btn-submit">Salvar Transa√ß√£o</button>
                 </form>
             </div>
         </div>
 
-        <!-- TABELA DE TRANSA«’ES -->
+        <!-- TABELA DE TRANSA√á√ïES -->
         <div class="card-glass">
-            <h3>HistÛrico de TransaÁıes</h3>
+            <h3>Hist√≥rico de Transa√ß√µes</h3>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>DescriÁ„o</th>
+                            <th>Descri√ß√£o</th>
                             <th>Categoria</th>
                             <th>Data</th>
                             <th>Valor</th>
@@ -365,22 +365,22 @@
         </div>
     </main>
 
-    <!-- CONFIGURA«’ES DO SISTEMA E INTEGRACAO SUPABASE -->
+    <!-- CONFIGURA√á√ïES DO SISTEMA E INTEGRACAO SUPABASE -->
     <script>
-        // --- CONFIGURA«√O CLIENTE SUPABASE ---
+        // --- CONFIGURA√á√ÉO CLIENTE SUPABASE ---
         const SUPABASE_URL = "https://pqiocypcgzlgwerakvpu.supabase.co"; // Insira sua URL aqui
         const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxaW9jeXBjZ3psZ3dlcmFrdnB1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkyOTI3MDYsImV4cCI6MjA5NDg2ODcwNn0.AyTYonz5kFfnkuOpk3LLb9fljmH64-o_sYVM4g2ksL0"; // Insira sua Anon Key aqui
         
         const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-        // --- ESTADO DA APLICA«√O ---
+        // --- ESTADO DA APLICA√á√ÉO ---
         let currentFilter = 'geral'; // Pode ser 'geral', '01'...'12', ou nome da categoria
         let filterType = 'view'; // 'view' (geral), 'month' (meses), ou 'category'
         let localTransactions = [];
-        let categories = ['Moradia', 'Aluguel', 'Conta ¡gua', 'Internet', 'Conta de Luz'];
+        let categories = ['Moradia', 'Aluguel', 'Conta √Ågua', 'Internet', 'Conta de Luz'];
         let myChart;
 
-        // --- INICIALIZA«√O ---
+        // --- INICIALIZA√á√ÉO ---
         window.addEventListener('DOMContentLoaded', async () => {
             initCategories();
             initChart();
@@ -421,7 +421,7 @@
             }
         }
 
-        // --- INTERA«’ES DE UX (MUDAN«A DE ABAS/FILTROS) ---
+        // --- INTERA√á√ïES DE UX (MUDAN√áA DE ABAS/FILTROS) ---
         function changeView(filter, element, type = 'month') {
             // Remove classe ativa de todos
             document.querySelectorAll('.btn-menu').forEach(b => b.classList.remove('active'));
@@ -430,12 +430,12 @@
             currentFilter = filter;
             filterType = filter === 'geral' ? 'view' : type;
 
-            // Atualiza TÌtulo estilizado Power BI
+            // Atualiza T√≠tulo estilizado Power BI
             const titleElement = document.getElementById('dashboard-title');
-            if(filter === 'geral') titleElement.innerText = "Vis„o Geral";
+            if(filter === 'geral') titleElement.innerText = "Vis√£o Geral";
             else if(type === 'month') {
-                const mesesNome = { "01":"Janeiro","02":"Fevereiro","03":"MarÁo","04":"Abril","05":"Maio","06":"Junho","07":"Julho","08":"Agosto","09":"Setembro","10":"Outubro","11":"Novembro","12":"Dezembro"};
-                titleElement.innerText = `An·lise Mensal - ${mesesNome[filter]}`;
+                const mesesNome = { "01":"Janeiro","02":"Fevereiro","03":"Mar√ßo","04":"Abril","05":"Maio","06":"Junho","07":"Julho","08":"Agosto","09":"Setembro","10":"Outubro","11":"Novembro","12":"Dezembro"};
+                titleElement.innerText = `An√°lise Mensal - ${mesesNome[filter]}`;
             } else {
                 titleElement.innerText = `Categoria - ${filter}`;
             }
@@ -443,7 +443,7 @@
             renderDashboard();
         }
 
-        // --- INTEGRA«√O COM BANCO DE DADOS (SUPABASE API) ---
+        // --- INTEGRA√á√ÉO COM BANCO DE DADOS (SUPABASE API) ---
         async function fetchTransactions() {
             try {
                 const { data, error } = await _supabase
@@ -480,21 +480,21 @@
 
                 if (error) throw error;
 
-                // Adiciona localmente na memÛria e atualiza a UI
+                // Adiciona localmente na mem√≥ria e atualiza a UI
                 if(data && data[0]) {
                     localTransactions.unshift(data[0]); 
                     document.getElementById('transaction-form').reset();
-                    renderDashboard(data[0].id); // Passa o ID para aplicar a animaÁ„o de fade-in
+                    renderDashboard(data[0].id); // Passa o ID para aplicar a anima√ß√£o de fade-in
                 }
             } catch (error) {
-                alert("Erro ao salvar transaÁ„o no Supabase.");
+                alert("Erro ao salvar transa√ß√£o no Supabase.");
                 console.error(error);
             }
         }
 
-        // --- L”GICA DE FILTRAGEM E RENDERIZA«√O BI ---
+        // --- L√ìGICA DE FILTRAGEM E RENDERIZA√á√ÉO BI ---
         function renderDashboard(justAddedId = null) {
-            // 1. Filtrar dados com base na seleÁ„o (Estilo Fatiador de Dados do Power BI)
+            // 1. Filtrar dados com base na sele√ß√£o (Estilo Fatiador de Dados do Power BI)
             let filtered = localTransactions.filter(t => {
                 if (filterType === 'view') return true;
                 if (filterType === 'month') {
@@ -518,20 +518,20 @@
             document.getElementById('kpi-saidas').innerText = `R$ ${saidas.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
             document.getElementById('kpi-total').innerText = `R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
             
-            // Cor do balanÁo total
+            // Cor do balan√ßo total
             document.getElementById('kpi-total').style.color = total >= 0 ? 'var(--verde-esmeralda)' : 'var(--vermelho-saida)';
 
-            // 3. Renderizar Tabela com animaÁ„o
+            // 3. Renderizar Tabela com anima√ß√£o
             const tbody = document.getElementById('transaction-table-body');
             tbody.innerHTML = '';
 
             filtered.forEach(t => {
                 const tr = document.createElement('tr');
                 if (t.id === justAddedId) {
-                    tr.classList.add('fade-in-row'); // Aplica efeito suave apenas no item recÈm criado
+                    tr.classList.add('fade-in-row'); // Aplica efeito suave apenas no item rec√©m criado
                 }
                 
-                // FormataÁ„o de data simples
+                // Formata√ß√£o de data simples
                 const dataFormatada = t.date.split('-').reverse().join('/');
 
                 tr.innerHTML = `
@@ -545,20 +545,20 @@
                 tbody.appendChild(tr);
             });
 
-            // 4. Atualizar Gr·ficos
+            // 4. Atualizar Gr√°ficos
             updateChart(filtered);
         }
 
-        // --- SISTEMA DE GR¡FICOS (CHART.JS) ---
+        // --- SISTEMA DE GR√ÅFICOS (CHART.JS) ---
         function initChart() {
             const ctx = document.getElementById('chartFinancas').getContext('2d');
             myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Janeiro', 'Fevereiro', 'MarÁo', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                    labels: ['Janeiro', 'Fevereiro', 'Mar√ßo', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
                     datasets: [
                         { label: 'Entradas', data: Array(12).fill(0), backgroundColor: '#06d6a0', borderRadius: 4 },
-                        { label: 'SaÌdas', data: Array(12).fill(0), backgroundColor: '#ff4d4d', borderRadius: 4 }
+                        { label: 'Sa√≠das', data: Array(12).fill(0), backgroundColor: '#ff4d4d', borderRadius: 4 }
                     ]
                 },
                 options: {
